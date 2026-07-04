@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Mobile — Mobile Phone Repair, Deira Dubai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700;800&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1D23;
+    --ink-2:#24262E;
+    --paper:#F6F4EF;
+    --orange:#FF5A36;
+    --blue:#3D6E8F;
+    --slate:#6B7178;
+    --white:#FCFCFB;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter', sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; overflow-x:hidden;}
+  html.ar body{font-family:'Noto Sans Arabic', sans-serif;}
+  h1,h2,h3,.display{font-family:'Sora', sans-serif; font-weight:700; letter-spacing:-0.01em;}
+  html.ar h1, html.ar h2, html.ar h3, html.ar .display{font-family:'Noto Kufi Arabic', sans-serif; letter-spacing:0;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  svg{display:block;}
+  .icon{width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  @media(max-width:768px){ section{padding:56px 0;} }
+
+  /* ---------- HEADER ---------- */
+  header{position:sticky; top:0; z-index:50; background:rgba(27,29,35,0.94); backdrop-filter:blur(8px); color:var(--white);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1180px; margin:0 auto;}
+  .logo{font-size:1.3rem; font-weight:700; color:var(--white); display:flex; align-items:center; gap:9px;}
+  .logo .mark{width:26px; height:26px; border-radius:7px; background:var(--orange); display:flex; align-items:center; justify-content:center;}
+  .logo .mark svg{width:16px; height:16px; stroke:var(--white);}
+  .nav-links{display:flex; gap:28px; font-size:0.94rem; font-weight:500;}
+  .nav-links a{opacity:0.85; transition:opacity .2s, color .2s;}
+  .nav-links a:hover{opacity:1; color:var(--orange);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .lang-btn{border:1px solid rgba(255,255,255,0.25); color:var(--white); background:transparent; padding:6px 12px; border-radius:20px; font-size:0.82rem; font-weight:600; cursor:pointer;}
+  .lang-btn:hover{border-color:var(--orange); color:var(--orange);}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:30px; font-weight:600; font-size:0.9rem; cursor:pointer; border:none; transition:transform .15s ease, box-shadow .15s ease; white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-orange{background:var(--orange); color:var(--white);}
+  .btn-orange:hover{box-shadow:0 8px 20px rgba(255,90,54,0.35);}
+  .btn-blue{background:var(--blue); color:var(--white);}
+  .btn-blue:hover{box-shadow:0 8px 20px rgba(61,110,143,0.3);}
+  .btn-outline{background:transparent; border:1.5px solid rgba(255,255,255,0.3); color:var(--white);}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+  .burger span{width:22px; height:2px; background:var(--white); display:block;}
+  .mobile-menu{display:none;}
+  @media(max-width:880px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .mobile-menu.open{display:flex; flex-direction:column; gap:2px; background:var(--ink-2); padding:10px 24px 18px;}
+    .mobile-menu a{padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:0.95rem;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{background:linear-gradient(160deg, var(--ink-2) 0%, var(--ink) 65%); color:var(--white); padding:90px 0 70px;}
+  .hero .wrap{display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px; align-items:center;}
+  @media(max-width:900px){ .hero .wrap{grid-template-columns:1fr;} }
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; color:var(--orange); font-weight:600; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:18px;}
+  .eyebrow::before{content:""; width:22px; height:1.5px; background:var(--orange);}
+  html.ar .eyebrow::before{display:none;}
+  .hero h1{font-size:2.65rem; line-height:1.15; margin-bottom:20px;}
+  @media(max-width:600px){ .hero h1{font-size:2rem;} }
+  .hero p.lead{font-size:1.06rem; color:#C7C9D1; max-width:500px; margin-bottom:32px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
+  .hero-meta{display:flex; gap:28px; flex-wrap:wrap; font-size:0.85rem; color:#9B9EAA;}
+  .hero-meta strong{display:block; color:var(--white); font-size:1.3rem; font-family:'Sora',sans-serif;}
+  html.ar .hero-meta strong{font-family:'Noto Kufi Arabic',sans-serif;}
+
+  /* signature: repair ticket card */
+  .ticket{
+    background:var(--white); color:var(--ink); border-radius:16px; padding:26px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35); position:relative; transform:rotate(-2deg);
+    border:1px dashed rgba(27,29,35,0.15);
+  }
+  .ticket-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; padding-bottom:16px; border-bottom:1px dashed rgba(27,29,35,0.15);}
+  .ticket-head .tnum{font-size:0.78rem; color:var(--slate); font-weight:600; letter-spacing:0.04em;}
+  .ticket-head h4{font-size:1.05rem;}
+  .stamp{
+    border:2.5px solid var(--orange); color:var(--orange); font-weight:800; font-size:0.85rem;
+    padding:5px 12px; border-radius:8px; transform:rotate(6deg); letter-spacing:0.06em; text-transform:uppercase;
+  }
+  .ticket-row{display:flex; justify-content:space-between; padding:9px 0; font-size:0.9rem; border-bottom:1px solid rgba(27,29,35,0.06);}
+  .ticket-row span:first-child{color:var(--slate);}
+  .ticket-row span:last-child{font-weight:600;}
+  .ticket-foot{margin-top:16px; display:flex; align-items:center; gap:10px; font-size:0.82rem; color:var(--slate);}
+  .ticket-foot svg{width:18px; height:18px; color:var(--blue);}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{max-width:640px; margin-bottom:46px;}
+  .sec-head .eyebrow{color:var(--ink); opacity:0.55;}
+  .sec-head .eyebrow::before{background:var(--ink); opacity:0.4;}
+  .sec-head h2{font-size:2rem; margin-bottom:12px;}
+  .sec-head p{color:var(--slate); font-size:1.02rem;}
+
+  /* ---------- SERVICES ---------- */
+  .svc-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media(max-width:980px){ .svc-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:560px){ .svc-grid{grid-template-columns:1fr;} }
+  .svc-card{background:var(--white); border-radius:var(--radius); padding:24px; border:1px solid rgba(27,29,35,0.08); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+  .svc-card:hover{transform:translateY(-4px); box-shadow:0 16px 30px rgba(27,29,35,0.08); border-color:transparent;}
+  .svc-card .ico{width:48px; height:48px; border-radius:12px; margin-bottom:16px; display:flex; align-items:center; justify-content:center; background:rgba(255,90,54,0.1); color:var(--orange);}
+  .svc-card:nth-child(2n) .ico{background:rgba(61,110,143,0.12); color:var(--blue);}
+  .svc-card h3{font-size:1.02rem; margin-bottom:8px;}
+  .svc-card p{color:var(--slate); font-size:0.88rem;}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps{background:var(--ink); color:var(--white);}
+  .steps .sec-head .eyebrow{color:var(--orange); opacity:1;}
+  .steps .sec-head .eyebrow::before{background:var(--orange); opacity:1;}
+  .steps .sec-head h2{color:var(--white);}
+  .steps .sec-head p{color:#B4B6C0;}
+  .step-row{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media(max-width:980px){ .step-row{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:560px){ .step-row{grid-template-columns:1fr;} }
+  .step-card{background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius); padding:26px 22px;}
+  .step-num{font-family:'Sora',sans-serif; font-size:0.85rem; font-weight:700; color:var(--white); background:var(--orange); width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  html.ar .step-num{font-family:'Noto Kufi Arabic',sans-serif;}
+  .step-card h3{font-size:1rem; margin-bottom:8px; color:var(--white);}
+  .step-card p{color:#C3C5CE; font-size:0.88rem;}
+
+  /* ---------- WHY US ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media(max-width:900px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:560px){ .why-grid{grid-template-columns:1fr;} }
+  .why-card{padding:8px 4px;}
+  .why-card .ico{width:42px; height:42px; color:var(--orange); margin-bottom:14px;}
+  .why-card h3{font-size:1rem; margin-bottom:8px;}
+  .why-card p{color:var(--slate); font-size:0.9rem;}
+
+  /* ---------- LOCATION ---------- */
+  .loc{display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:stretch;}
+  @media(max-width:860px){ .loc{grid-template-columns:1fr;} }
+  .loc-card{background:var(--white); border-radius:var(--radius); padding:34px; border:1px solid rgba(27,29,35,0.08);}
+  .loc-card .ico{width:36px; height:36px; color:var(--orange); margin-bottom:16px;}
+  .loc-card h3{font-size:1.3rem; margin-bottom:10px;}
+  .loc-card address{font-style:normal; color:var(--slate); margin-bottom:22px; line-height:1.7;}
+  .map-frame{border-radius:var(--radius); overflow:hidden; border:1px solid rgba(27,29,35,0.08); min-height:320px;}
+  .map-frame iframe{width:100%; height:100%; min-height:320px; border:0;}
+
+  /* ---------- CONTACT BAND ---------- */
+  .cta-band{background:linear-gradient(120deg, var(--ink-2), var(--ink) 60%); color:var(--white); text-align:center; border-radius:24px; margin:0 24px; padding:60px 30px;}
+  .cta-band-inner{max-width:1180px; margin:0 auto;}
+  .cta-band h2{font-size:2rem; margin-bottom:14px;}
+  .cta-band p{color:#C7C9D1; margin-bottom:30px; font-size:1.02rem;}
+  .cta-band .btn{padding:14px 30px; font-size:1rem;}
+  .whatsapp-number{margin-top:20px; font-size:0.95rem; color:#9B9EAA;}
+  .whatsapp-number strong{color:var(--white); letter-spacing:0.03em;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:50px 0 30px; color:var(--slate); font-size:0.88rem;}
+  .foot-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; margin-bottom:10px;}
+  .foot-brand{font-family:'Sora',sans-serif; font-weight:700; color:var(--ink); font-size:1.1rem;}
+  html.ar .foot-brand{font-family:'Noto Kufi Arabic',sans-serif;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(27,29,35,0.1); padding-top:24px; margin-top:44px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"></path></svg></span>
+      <span data-en="ALI MOBILE" data-ar="علي موبايل">ALI MOBILE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+      <li><a href="#how" data-en="How it works" data-ar="كيف نعمل">How it works</a></li>
+      <li><a href="#why" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
+      <li><a href="#location" data-en="Location" data-ar="الموقع">Location</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" id="langToggle">العربية</button>
+      <a class="btn btn-orange" href="https://wa.me/971522122717?text=Hi%20Ali%20Mobile%2C%20I%20need%20a%20phone%20repair." target="_blank" rel="noopener" data-en="WhatsApp" data-ar="واتساب">WhatsApp</a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+    <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+    <a href="#how" data-en="How it works" data-ar="كيف نعمل">How it works</a>
+    <a href="#why" data-en="Why Us" data-ar="لماذا نحن">Why Us</a>
+    <a href="#location" data-en="Location" data-ar="الموقع">Location</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-en="Mobile Repair · Deira, Dubai" data-ar="تصليح موبايل · ديرة، دبي">Mobile Repair · Deira, Dubai</div>
+      <h1 data-en="Every phone problem, fixed the same day" data-ar="نصلح كل مشاكل موبايلك في نفس اليوم">Every phone problem, fixed the same day</h1>
+      <p class="lead" data-en="Screens, batteries, charging ports, water damage, software and more — all brands, genuine parts, real warranty. Based in Frij Al Murar, Deira, near Sky Hotel." data-ar="شاشات، بطاريات، منافذ شحن، أضرار المياه، برمجيات وأكثر — لكل الماركات، بقطع أصلية وضمان حقيقي. موقعنا في فريج المرر، ديرة، بالقرب من فندق سكاي.">Screens, batteries, charging ports, water damage, software and more — all brands, genuine parts, real warranty. Based in Frij Al Murar, Deira, near Sky Hotel.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-orange" href="https://wa.me/971522122717?text=Hi%20Ali%20Mobile%2C%20I%20need%20a%20phone%20repair." target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M20 12a8 8 0 1 1-3.7-6.75"></path><path d="M12 3a8 8 0 0 1 7.9 9.3L21 21l-8.8-1.1"></path></svg>
+          <span data-en="Chat on WhatsApp" data-ar="تواصل عبر واتساب">Chat on WhatsApp</span>
+        </a>
+        <a class="btn btn-outline" href="#services" data-en="See all services" data-ar="شاهد كل الخدمات">See all services</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong data-en="All brands" data-ar="كل الماركات">All brands</strong><span data-en="iPhone, Samsung & more" data-ar="آيفون، سامسونج وغيرها">iPhone, Samsung & more</span></div>
+        <div><strong data-en="Same-day" data-ar="نفس اليوم">Same-day</strong><span data-en="most repairs while you wait" data-ar="معظم الإصلاحات أثناء الانتظار">most repairs while you wait</span></div>
+        <div><strong data-en="Warranty" data-ar="ضمان">Warranty</strong><span data-en="on parts and labor" data-ar="على القطع والعمل">on parts and labor</span></div>
+      </div>
+    </div>
+    <div class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="tnum" data-en="TICKET #AM-0472" data-ar="تذكرة رقم AM-0472">TICKET #AM-0472</div>
+          <h4 data-en="Repair Docket" data-ar="بطاقة الإصلاح">Repair Docket</h4>
+        </div>
+        <div class="stamp" data-en="Ready" data-ar="جاهز">Ready</div>
+      </div>
+      <div class="ticket-row"><span data-en="Device" data-ar="الجهاز">Device</span><span data-en="iPhone 13 Pro" data-ar="آيفون 13 برو">iPhone 13 Pro</span></div>
+      <div class="ticket-row"><span data-en="Issue" data-ar="المشكلة">Issue</span><span data-en="Cracked screen" data-ar="شاشة مكسورة">Cracked screen</span></div>
+      <div class="ticket-row"><span data-en="Part used" data-ar="القطعة المستخدمة">Part used</span><span data-en="Genuine OLED" data-ar="OLED أصلي">Genuine OLED</span></div>
+      <div class="ticket-row"><span data-en="Turnaround" data-ar="مدة التصليح">Turnaround</span><span data-en="45 minutes" data-ar="٤٥ دقيقة">45 minutes</span></div>
+      <div class="ticket-foot">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        <span data-en="6-month warranty included" data-ar="ضمان ٦ أشهر مشمول">6-month warranty included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-en="What we fix" data-ar="ماذا نصلح">What we fix</div>
+      <h2 data-en="All kinds of mobile repairs, under one roof" data-ar="جميع أنواع إصلاحات الموبايل تحت سقف واحد">All kinds of mobile repairs, under one roof</h2>
+      <p data-en="Not sure what's wrong? Send us a photo or voice note on WhatsApp and we'll diagnose it for free." data-ar="لست متأكداً من المشكلة؟ أرسل لنا صورة أو رسالة صوتية عبر واتساب وسنشخصها مجاناً.">Not sure what's wrong? Send us a photo or voice note on WhatsApp and we'll diagnose it for free.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-en="How it works" data-ar="كيف نعمل">How it works</div>
+      <h2 data-en="From broken to fixed, in four steps" data-ar="من عطل إلى إصلاح في أربع خطوات">From broken to fixed, in four steps</h2>
+    </div>
+    <div class="step-row" id="stepRow"></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-en="Why Ali Mobile" data-ar="لماذا علي موبايل">Why Ali Mobile</div>
+      <h2 data-en="Repairs you can trust, every time" data-ar="إصلاحات يمكنك الوثوق بها في كل مرة">Repairs you can trust, every time</h2>
+    </div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-en="Find us" data-ar="موقعنا">Find us</div>
+      <h2 data-en="Walk in, or send it with a driver" data-ar="زرنا مباشرة أو أرسله مع سائق">Walk in, or send it with a driver</h2>
+    </div>
+    <div class="loc">
+      <div class="loc-card">
+        <svg class="icon ico" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12z"></path><circle cx="12" cy="9" r="2.6"></circle></svg>
+        <h3 data-en="Ali Mobile" data-ar="علي موبايل">Ali Mobile</h3>
+        <address data-en="Frij Al Murar, Deira, Dubai — near Sky Hotel, United Arab Emirates" data-ar="فريج المرر، ديرة، دبي — بالقرب من فندق سكاي، الإمارات العربية المتحدة">Frij Al Murar, Deira, Dubai — near Sky Hotel, United Arab Emirates</address>
+        <a class="btn btn-blue" href="https://wa.me/971522122717" target="_blank" rel="noopener" data-en="Get directions on WhatsApp" data-ar="احصل على الموقع عبر واتساب">Get directions on WhatsApp</a>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Frij+Al+Murar,+Deira,+Dubai+near+Sky+Hotel&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-band-inner">
+        <h2 data-en="Phone acting up?" data-ar="هل جهازك يعاني من مشكلة؟">Phone acting up?</h2>
+        <p data-en="Send us the issue on WhatsApp and get a free diagnosis today." data-ar="أرسل لنا المشكلة عبر واتساب واحصل على تشخيص مجاني اليوم.">Send us the issue on WhatsApp and get a free diagnosis today.</p>
+        <a class="btn btn-orange" href="https://wa.me/971522122717?text=Hi%20Ali%20Mobile%2C%20I%20need%20a%20phone%20repair." target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M20 12a8 8 0 1 1-3.7-6.75"></path><path d="M12 3a8 8 0 0 1 7.9 9.3L21 21l-8.8-1.1"></path></svg>
+          <span data-en="Message us on WhatsApp" data-ar="راسلنا عبر واتساب">Message us on WhatsApp</span>
+        </a>
+        <div class="whatsapp-number">
+          <span data-en="Or call/WhatsApp directly:" data-ar="أو اتصل مباشرة عبر واتساب:">Or call/WhatsApp directly:</span>
+          <strong>+971 52 212 2717</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand" data-en="ALI MOBILE" data-ar="علي موبايل">ALI MOBILE</div>
+        <p style="margin-top:6px; max-width:320px;" data-en="Mobile phone repair, Frij Al Murar, Deira, Dubai." data-ar="تصليح جوالات، فريج المرر، ديرة، دبي.">Mobile phone repair, Frij Al Murar, Deira, Dubai.</p>
+      </div>
+      <div>
+        <p data-en="WhatsApp / Phone" data-ar="واتساب / هاتف" style="color:var(--ink); font-weight:600; margin-bottom:6px;">WhatsApp / Phone</p>
+        <a href="https://wa.me/971522122717" target="_blank" rel="noopener">+971 52 212 2717</a>
+      </div>
+    </div>
+    <div class="foot-row">
+      <span data-en="© 2026 Ali Mobile. All rights reserved." data-ar="© 2026 علي موبايل. جميع الحقوق محفوظة.">© 2026 Ali Mobile. All rights reserved.</span>
+      <span data-en="Frij Al Murar, Deira, Dubai, UAE" data-ar="فريج المرر، ديرة، دبي، الإمارات">Frij Al Murar, Deira, Dubai, UAE</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const icons = {
+  screen: '<rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M9 21h6"></path><path d="M6 8l4 4-4 4"></path>',
+  battery: '<rect x="2" y="8" width="17" height="8" rx="2"></rect><path d="M22 10v4"></path><path d="M6 10v4"></path><path d="M9.5 10v4"></path>',
+  port: '<rect x="3" y="7" width="18" height="10" rx="2"></rect><path d="M8 12h1"></path><path d="M12 12h1"></path><path d="M16 12h1"></path>',
+  water: '<path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"></path><path d="M9 15a3 3 0 0 0 3 3"></path>',
+  software: '<rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 20h8"></path><path d="M9 9l2 2-2 2"></path><path d="M13 13h2"></path>',
+  camera: '<rect x="3" y="7" width="18" height="13" rx="2"></rect><circle cx="12" cy="13.5" r="3.4"></circle><path d="M9 7l1.5-2.5h3L15 7"></path>',
+  glass: '<rect x="5" y="3" width="14" height="18" rx="3"></rect><path d="M9 3v18"></path><path d="M15 3v18"></path>',
+  speaker: '<path d="M4 10v4h3l5 4V6l-5 4H4z"></path><path d="M16 9a4 4 0 0 1 0 6"></path><path d="M18.5 6.5a8 8 0 0 1 0 11"></path>',
+  data: '<rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path>',
+  chat: '<path d="M21 12a8 8 0 1 1-3.2-6.4"></path><path d="M21 4l-9 9"></path>',
+  search: '<circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M21 21l-5-5"></path>',
+  wrench: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"></path>',
+  handoff: '<path d="M3 12h13"></path><path d="M12 7l5 5-5 5"></path><rect x="17" y="4" width="4" height="16" rx="1"></rect>',
+  shield: '<path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path>',
+  clock: '<circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path>',
+  gem: '<path d="M4 8l4-5h8l4 5-8 12z"></path><path d="M4 8h16"></path><path d="M9 3l3 5 3-5"></path>',
+  users: '<circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17.5" cy="9" r="2.6"></circle><path d="M15.5 20c0-2.6 1.9-4.8 4.5-5.3"></path>'
+};
+function icon(name, cls){ return `<svg class="icon ${cls||''}" viewBox="0 0 24 24">${icons[name]}</svg>`; }
+
+const services = [
+  {icon:'screen', en:['Screen Replacement','Cracked, black, or flickering display — fixed with genuine parts.'], ar:['استبدال الشاشة','شاشة مكسورة أو سوداء أو تومض — نصلحها بقطع أصلية.']},
+  {icon:'battery', en:['Battery Replacement','Draining fast or swelling? Fresh battery, same day.'], ar:['استبدال البطارية','تنفد بسرعة أو منتفخة؟ بطارية جديدة في نفس اليوم.']},
+  {icon:'port', en:['Charging Port Repair','Not charging or loose connection — cleaned or replaced.'], ar:['إصلاح منفذ الشحن','لا يشحن أو التوصيل غير ثابت — تنظيف أو استبدال.']},
+  {icon:'water', en:['Water Damage Repair','Full clean, dry-out and component check after liquid exposure.'], ar:['إصلاح أضرار المياه','تنظيف كامل وتجفيف وفحص المكونات بعد التعرض للسوائل.']},
+  {icon:'software', en:['Software & Unlocking','Frozen phones, updates, resets and carrier unlocking.'], ar:['البرمجيات وفتح الشبكة','أجهزة متجمدة، تحديثات، إعادة ضبط وفتح شبكة.']},
+  {icon:'camera', en:['Camera Repair','Blurry, black or cracked camera lens — front or back.'], ar:['إصلاح الكاميرا','كاميرا ضبابية أو سوداء أو عدسة مكسورة — أمامية أو خلفية.']},
+  {icon:'glass', en:['Back Glass Replacement','Cracked back panel replaced without touching your data.'], ar:['استبدال الزجاج الخلفي','استبدال اللوحة الخلفية المكسورة دون المساس ببياناتك.']},
+  {icon:'speaker', en:['Speaker & Mic Repair',"Can't hear or be heard on calls? We'll sort the audio."], ar:['إصلاح السماعة والمايك','لا تسمع أو لا يُسمع صوتك بالمكالمات؟ نحل مشكلة الصوت.']}
+];
+const steps = [
+  {icon:'chat', en:['Message us','Send your issue and device model on WhatsApp — anytime.'], ar:['راسلنا','أرسل مشكلتك وموديل جهازك عبر واتساب في أي وقت.']},
+  {icon:'search', en:['Free diagnosis','We check the issue and confirm the cost before starting.'], ar:['تشخيص مجاني','نفحص المشكلة ونؤكد التكلفة قبل البدء.']},
+  {icon:'wrench', en:['We repair it','Most repairs done same day, often while you wait.'], ar:['نقوم بالإصلاح','معظم الإصلاحات تتم في نفس اليوم وأحياناً أثناء الانتظار.']},
+  {icon:'handoff', en:['Collect with warranty','Pick up in Deira or get it delivered, warranty included.'], ar:['استلم مع الضمان','استلم من ديرة أو اطلب التوصيل، مع ضمان شامل.']}
+];
+const whyus = [
+  {icon:'shield', en:['Real warranty','Every repair backed by a written warranty.'], ar:['ضمان حقيقي','كل إصلاح مدعوم بضمان مكتوب.']},
+  {icon:'gem', en:['Genuine parts','No shortcuts — original or OEM-grade parts only.'], ar:['قطع أصلية','بدون حلول مختصرة — قطع أصلية أو بجودة الشركة المصنعة فقط.']},
+  {icon:'clock', en:['Same-day service','Most repairs completed within the hour.'], ar:['خدمة في نفس اليوم','معظم الإصلاحات تنتهي خلال ساعة.']},
+  {icon:'users', en:['Experienced technicians','Years of hands-on repair experience, all brands.'], ar:['فنيون ذوو خبرة','سنوات من الخبرة العملية في الإصلاح لجميع الماركات.']}
+];
+
+function renderServices(lang){
+  document.getElementById('svcGrid').innerHTML = services.map(s=>`
+    <div class="svc-card"><div class="ico">${icon(s.icon)}</div><h3>${s[lang][0]}</h3><p>${s[lang][1]}</p></div>`).join('');
+}
+function renderSteps(lang){
+  document.getElementById('stepRow').innerHTML = steps.map((s,i)=>`
+    <div class="step-card"><div class="step-num">${lang==='ar' ? ['١','٢','٣','٤'][i] : i+1}</div><h3>${s[lang][0]}</h3><p>${s[lang][1]}</p></div>`).join('');
+}
+function renderWhy(lang){
+  document.getElementById('whyGrid').innerHTML = whyus.map(w=>`
+    <div class="why-card">${icon(w.icon,'ico')}<h3>${w[lang][0]}</h3><p>${w[lang][1]}</p></div>`).join('');
+}
+
+let currentLang = 'en';
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.classList.toggle('ar', lang === 'ar');
+  document.querySelectorAll('[data-en]').forEach(el=>{ el.textContent = el.getAttribute('data-'+lang); });
+  document.getElementById('langToggle').textContent = lang === 'ar' ? 'English' : 'العربية';
+  renderServices(lang);
+  renderSteps(lang);
+  renderWhy(lang);
+}
+document.getElementById('langToggle').addEventListener('click', ()=> applyLang(currentLang === 'en' ? 'ar' : 'en'));
+
+const burger = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', ()=> mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.remove('open')));
+
+applyLang('en');
+</script>
+
+</body>
+</html>
